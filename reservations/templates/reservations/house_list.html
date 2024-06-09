@@ -1,0 +1,17 @@
+{% extends 'reservations/base.html' %}
+
+{% block title %}House List{% endblock %}
+
+{% block content %}
+    <h2>All Houses</h2>
+        <div class="house-grid">
+            {% for house in object_list %}
+            <div class="house-card">
+                <img src="{{ house.image.url }}" alt="{{ house.name }}">
+                <a class="center" href="{% url 'house_detail' house.pk %}"><p><strong>{{ house.name }}</strong></p></a>
+                <p class="center">Price: ${{ house.price_per_day }}/day</p>
+                <p class="center">City: {{ house.city }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'reservations/base.html' %}
+
+{% block title %}اضافه کردن خانه{% endblock %}
+
+{% block content %}
+<h1>اضافه کردن</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ذخیره</button>
+</form>
+{% endblock %}
